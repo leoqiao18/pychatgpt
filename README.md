@@ -10,5 +10,5 @@ Automation for prompting ChatGPT in Chrome.
 ## Usage
 
 ```shell
-poetry run pychatgpt prompt [--verify] CHROME_DRIVER_PATH CHROME_PATH PROMPT
+poetry run pychatgpt prompt [--verify] CHROME_DRIVER_PATH CHROME_PATH
 ```

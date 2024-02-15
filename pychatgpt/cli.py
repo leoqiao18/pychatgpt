@@ -2,11 +2,7 @@ from typing import Optional
 import typer
 from typing_extensions import Annotated
 import logging
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-import os
-import subprocess
-import time
+import sys
 
 from pychatgpt import __app_name__, __version__
 from pychatgpt.chatgpt_controller import ChatGPTController
@@ -52,21 +48,10 @@ def main(
 
 
 @app.command()
-def run1():
-    """
-    Go to chatgpt in Firefox
-    """
-    # os.system(
-    #     '"~/opt/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing"'
-    # )
-    subprocess.run(["/Users/lqiao/sandbox/test space.sh"])
-
-
-@app.command()
 def prompt(
     chrome_driver_path: Annotated[str, typer.Argument(help="Path to chromedriver")],
     chrome_path: Annotated[str, typer.Argument(help="Path to chrome")],
-    prompt: Annotated[str, typer.Argument(help="Prompt for ChatGPT")],
+    # prompt: Annotated[str, typer.Argument(help="Prompt for ChatGPT")],
     need_verification: Annotated[
         bool, typer.Option("--verify", help="Prompt for ChatGPT")
     ] = False,
@@ -77,6 +62,8 @@ def prompt(
     """
     Automate chatting with ChatGPT in Chrome
     """
+
+    prompt = sys.stdin.read()
 
     chatgpt = ChatGPTController(
         chrome_path,
