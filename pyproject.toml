@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "pychatgpt"
+version = "0.1.0"
+description = ""
+authors = ["Leo Qiao <qiaofeitong@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+pychatgpt = "pychatgpt.cli:app"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+selenium = "^4.17.2"
+typer = "^0.9.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
