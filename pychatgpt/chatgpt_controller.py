@@ -41,6 +41,8 @@ class ChatGPTController:
         self.launch_chrome_with_remote_debugging(free_port, url)
         if self.need_verification:
             self.wait_for_human_verification()
+        else:
+            time.sleep(2)
         self.driver = self.setup_webdriver(free_port)
 
     @staticmethod
